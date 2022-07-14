@@ -4,4 +4,4 @@ import pandas as pd
 import numpy as np
 
 
-st.title('Hello in my streamlit App')
+st.title('Hello in my first streamlit App :)')
