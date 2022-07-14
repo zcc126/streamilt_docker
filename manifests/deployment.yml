@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: zccstreamiltdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zccstreamiltdocker
+  template:
+    metadata:
+      labels:
+        app: zccstreamiltdocker 
+    spec:
+      containers:
+        - name: zccstreamiltdocker 
+          image: dockertestzcc.azurecr.io/zccstreamiltdocker
+          ports:
+          - containerPort: 8501
