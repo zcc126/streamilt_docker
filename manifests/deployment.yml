@@ -17,15 +17,14 @@ spec:
           image: dockertestzcc.azurecr.io/zccstreamiltdocker
           ports:
           - containerPort: 8501
-          env:
-            - name: SECRET_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mysecret
-                  key: username
-            - name: SECRET_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysecret
-                  key: password
-   
+#           env:
+#             - name: SECRET_USERNAME
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: mysecret
+#                   key: username
+#             - name: SECRET_PASSWORD
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: mysecret
+#                   key: password
