@@ -1,9 +1,18 @@
-# Import streamlit 
 import streamlit as st
 import pandas as pd
 import numpy as np
 import os
+from azure.storage.blob import BlobServiceClient
+
 key_blob=os.environ["KEY_BLOB"]
-# f = open("/etc/keys_azure/keyblob", "r")
-# key_blob=f.read()
-st.title('Hello in my first streamlit App :)' + str(key_blob))
+url_blob=os.environ["URL_BLOB"]
+local_file_name="Airlines.csv"
+container_name="airline"
+
+st.title('Hello in my first streamlit App :)')
+
+blob_service_client_instance = BlobServiceClient(account_url=url_blob, credential=key_blob)
+blob_client_instance = blob_service_client_instance.get_blob_client(container_name, local_file_name, snapshot=None)
+
+dataframe_blobdata = pd.read_csv(local_file_name)
+st.dataframe(dataframe_blobdata.head(5))
