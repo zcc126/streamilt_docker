@@ -25,3 +25,6 @@ spec:
         - name: keyb
           secret: 
             secretName: mysecret2
+            items:
+              - key: mysecret2.keyblob
+              - path: mysecret2.keyblob
