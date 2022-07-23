@@ -3,16 +3,21 @@ import pandas as pd
 import numpy as np
 import os
 from azure.storage.blob import BlobServiceClient
+import time
 
 key_blob=os.environ["KEY_BLOB"]
 url_blob=os.environ["URL_BLOB"]
 local_file_name="Airlines.csv"
 container_name="airline"
 
-st.title('Hello in my first streamlit App :)')
+# st.title('Hello in my first streamlit App :)')
 
+t1=time.time()
 blob_service_client_instance = BlobServiceClient(account_url=url_blob, credential=key_blob)
 blob_client_instance = blob_service_client_instance.get_blob_client(container_name, local_file_name, snapshot=None)
+t2=time.time()
 
-dataframe_blobdata = pd.read_csv(local_file_name)
-st.dataframe(dataframe_blobdata.head(5))
+st.title('Hello in my first streamlit App :)' + str(t2-t1))
+
+# dataframe_blobdata = pd.read_csv(local_file_name)
+# st.dataframe(dataframe_blobdata.head(5))
