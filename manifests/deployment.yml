@@ -16,7 +16,7 @@ spec:
         - name: zccstreamiltdocker 
           image: dockertestzcc.azurecr.io/zccstreamiltdocker
           volumeMounts: 
-            - mountPath: /etc/keys_azure
+            - mountPath: /etc/keyb
               name: keyb
               readOnly: true
           ports:
@@ -27,4 +27,3 @@ spec:
             secretName: mysecret2
             items:
               - key: mysecret2.keyblob
-              - path: mysecret2.keyblob
