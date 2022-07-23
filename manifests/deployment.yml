@@ -26,8 +26,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysecret2
-                  key: keyblob 
-                  
+                  key: keyblob
+            - name: URL_BLOB
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret2
+                  key: urlblob 
 #       volumes: 
 #         - name: keyb
 #           secret: 
