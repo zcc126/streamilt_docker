@@ -15,7 +15,7 @@ st.title('Hello in my first streamlit App :)')
 
 blob_service_client_instance = BlobServiceClient(account_url=url_blob, credential=key_blob)
 # blob_client_instance = blob_service_client_instance.get_blob_client(container_name, local_file_name, snapshot=None)
-blobstring = blob_client_instance.get_blob_to_text(container_name, local_file_name)
+blobstring = blob_service_client_instance.get_blob_to_text(container_name, local_file_name)
 dataframe_blobdata = pd.read_csv(StringIO(blobstring))
 
 # dataframe_blobdata = pd.read_csv(local_file_name)
