@@ -11,9 +11,9 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c4e55f56-b26e-4b4c-981a-ec4c47c7ad9d'
+  dockerRegistryServiceConnection: '964df7ca-3ba4-48b6-a695-1ed9db5723f8'
   imageRepository: 'zccstreamiltdocker'
-  containerRegistry: 'dockertestzcc.azurecr.io'
+  containerRegistry: 'zccdocker1.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'dockertestzcc12708f7c-auth'
